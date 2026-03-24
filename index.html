@@ -3,16 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Petshop & Klinik Hewan | Booking Cepat via WhatsApp</title>
+    <title>Jasa Website Petshop & Klinik Hewan | Digital Growth Partner</title>
     <meta
       name="description"
-      content="Landing page petshop dan klinik hewan dengan CTA WhatsApp fungsional, copywriting AIDA, dan desain modern untuk meningkatkan booking dan penjualan."
+      content="Jasa pembuatan website untuk petshop dan klinik hewan dengan CTA WhatsApp fungsional, copywriting AIDA, dan paket penawaran untuk bantu growth bisnis."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <link
+      rel="icon"
+      type="image/webp"
+      sizes="64x64"
+      href="https://carisolusi.biz.id/gambarbebas/20260325-122921_petcare-logo-sm-trans.webp"
     />
     <style>
       :root {
@@ -142,13 +153,13 @@
 
       .hero-grid {
         display: grid;
-        grid-template-columns: 0.94fr 1.06fr;
+        grid-template-columns: 1fr 1fr;
         align-items: center;
-        gap: 32px;
+        gap: 40px;
       }
 
       .pet-stage {
-        min-height: 660px;
+        min-height: 680px;
         position: relative;
         display: flex;
         align-items: center;
@@ -157,12 +168,12 @@
 
       .blob {
         position: absolute;
-        width: 88%;
-        aspect-ratio: 1 / 1.15;
+        width: 94%;
+        aspect-ratio: 1 / 1.12;
         background: linear-gradient(180deg, var(--primary) 0%, #0a7895 100%);
         border-radius: 50% 42% 44% 56% / 52% 54% 46% 48%;
-        left: -10%;
-        top: 4%;
+        left: -2%;
+        top: 3%;
       }
 
       .blob::after {
@@ -178,24 +189,33 @@
 
       .pet-card {
         position: relative;
-        width: min(520px, 100%);
+        width: min(560px, 100%);
         background: linear-gradient(
           180deg,
-          rgba(255, 255, 255, 0.22),
-          rgba(255, 255, 255, 0.08)
+          rgba(255, 255, 255, 0.14),
+          rgba(255, 255, 255, 0.04)
         );
-        border: 1px solid rgba(255, 255, 255, 0.32);
-        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.28);
+        backdrop-filter: blur(10px);
         border-radius: 38px;
-        padding: 26px;
+        padding: 18px;
         box-shadow: var(--shadow);
       }
 
-      .pet-emoji {
-        font-size: clamp(180px, 28vw, 330px);
-        line-height: 1;
-        text-align: center;
-        filter: drop-shadow(0 18px 22px rgba(0, 0, 0, 0.18));
+      .hero-image-wrap {
+        overflow: hidden;
+        border-radius: 30px;
+        min-height: 580px;
+        background: linear-gradient(180deg, #fdf8ee 0%, #f5e9d6 100%);
+        box-shadow: 0 24px 36px rgba(0, 0, 0, 0.18);
+      }
+
+      .hero-image {
+        width: 100%;
+        height: 580px;
+        object-fit: cover;
+        object-position: 54% 18%;
+        transform: scale(1.05);
       }
 
       .pet-badge {
@@ -213,20 +233,42 @@
       .paw {
         position: absolute;
         color: rgba(159, 241, 228, 0.9);
-        font-size: 100px;
+        font-size: 84px;
         line-height: 1;
         user-select: none;
       }
 
       .paw.one {
-        right: -6px;
-        bottom: 56px;
+        right: -10px;
+        bottom: 52px;
       }
 
       .paw.two {
-        right: 40px;
-        top: 72px;
-        font-size: 74px;
+        right: 30px;
+        top: 54px;
+        font-size: 64px;
+      }
+
+      .badge-stack {
+        position: absolute;
+        left: 18px;
+        bottom: 18px;
+        display: grid;
+        gap: 12px;
+      }
+
+      .mini-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        width: fit-content;
+        padding: 11px 14px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.92);
+        color: var(--primary-dark);
+        font-size: 14px;
+        font-weight: 700;
+        box-shadow: 0 10px 22px rgba(18, 76, 92, 0.12);
       }
 
       .eyebrow {
@@ -280,7 +322,8 @@
         transition:
           transform 0.2s ease,
           box-shadow 0.2s ease,
-          background 0.2s ease;
+          background 0.2s ease,
+          border-color 0.2s ease;
       }
 
       .btn:hover {
@@ -314,6 +357,26 @@
         box-shadow: 0 18px 40px rgba(18, 76, 92, 0.08);
       }
 
+      .glass-card,
+      .proof-item,
+      .cta-strip,
+      .pet-card {
+        transition:
+          transform 0.32s ease,
+          box-shadow 0.32s ease,
+          border-color 0.32s ease,
+          background 0.32s ease;
+      }
+
+      .glass-card:hover,
+      .proof-item:hover,
+      .pet-card:hover,
+      .cta-strip:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 30px 60px rgba(18, 76, 92, 0.16);
+        border-color: rgba(15, 140, 171, 0.22);
+      }
+
       .proof-item strong {
         display: block;
         font-size: 28px;
@@ -326,6 +389,65 @@
         color: var(--muted);
         font-size: 14px;
         line-height: 1.6;
+      }
+
+      .pricing-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 20px;
+      }
+
+      .pricing-card {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .pricing-card.popular {
+        transform: translateY(-8px);
+        border: 1px solid rgba(15, 140, 171, 0.24);
+      }
+
+      .pricing-card.popular:hover {
+        transform: translateY(-14px);
+      }
+
+      .pricing-badge {
+        position: absolute;
+        top: 18px;
+        right: 18px;
+        background: var(--accent-soft);
+        color: var(--primary-dark);
+        font-size: 12px;
+        font-weight: 800;
+        padding: 8px 12px;
+        border-radius: 999px;
+      }
+
+      .pricing-card h3 {
+        margin: 0;
+        font-size: 28px;
+      }
+
+      .pricing-price {
+        display: block;
+        margin: 12px 0 18px;
+        font-size: 34px;
+        color: var(--primary);
+        font-weight: 800;
+      }
+
+      .price-list {
+        display: grid;
+        gap: 12px;
+        margin: 20px 0 28px;
+        color: var(--muted);
+      }
+
+      .price-list div {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        line-height: 1.7;
       }
 
       .section {
@@ -522,16 +644,147 @@
         margin-bottom: 14px;
       }
 
+      .testimonial-card {
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.96),
+          rgba(245, 252, 250, 0.94)
+        );
+        border: 1px solid rgba(15, 140, 171, 0.12);
+      }
+
+      .testimonial-card::before {
+        content: '';
+        position: absolute;
+        inset: 0 0 auto 0;
+        height: 5px;
+        background: linear-gradient(90deg, #4285f4, #ea4335, #fbbc05, #34a853);
+      }
+
+      .testimonial-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        margin-bottom: 18px;
+      }
+
+      .reviewer {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+
+      .reviewer-badge {
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(
+          135deg,
+          rgba(15, 140, 171, 0.14),
+          rgba(159, 241, 228, 0.44)
+        );
+        color: var(--primary-dark);
+        font-weight: 800;
+      }
+
+      .reviewer-meta strong {
+        display: block;
+        margin: 0;
+        font-size: 16px;
+      }
+
+      .reviewer-meta span {
+        display: block;
+        margin-top: 4px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .google-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 14px;
+        border-radius: 999px;
+        background: #fff;
+        border: 1px solid rgba(15, 140, 171, 0.1);
+        font-weight: 700;
+        color: #3c4043;
+        box-shadow: 0 10px 20px rgba(18, 76, 92, 0.08);
+      }
+
+      .google-g {
+        font-size: 24px;
+        font-weight: 800;
+        background: conic-gradient(
+          from 0deg,
+          #4285f4 0deg 90deg,
+          #34a853 90deg 180deg,
+          #fbbc05 180deg 270deg,
+          #ea4335 270deg 360deg
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        line-height: 1;
+      }
+
       .testimonial-card p {
         margin: 0;
         color: var(--muted);
         line-height: 1.85;
       }
 
-      .testimonial-card strong {
-        display: block;
-        margin-top: 18px;
-        font-size: 15px;
+      .testimonial-foot {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        margin-top: 22px;
+        padding-top: 18px;
+        border-top: 1px solid rgba(15, 140, 171, 0.08);
+      }
+
+      .testimonial-foot strong {
+        font-size: 14px;
+      }
+
+      .testimonial-foot span {
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(34px) scale(0.98);
+        transition:
+          opacity 0.8s ease,
+          transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        transition-delay: var(--delay, 0s);
+      }
+
+      .reveal.in-view {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+
+      .reveal-left {
+        transform: translateX(-48px) scale(0.98);
+      }
+
+      .reveal-right {
+        transform: translateX(48px) scale(0.98);
+      }
+
+      .reveal-left.in-view,
+      .reveal-right.in-view {
+        transform: translateX(0) scale(1);
       }
 
       .cta-strip {
@@ -580,7 +833,8 @@
         .aida-grid,
         .services,
         .reasons,
-        .testimonials {
+        .testimonials,
+        .pricing-grid {
           grid-template-columns: 1fr 1fr;
         }
 
@@ -590,6 +844,14 @@
 
         .pet-stage {
           min-height: 540px;
+        }
+
+        .hero-image-wrap {
+          min-height: 520px;
+        }
+
+        .hero-image {
+          height: 520px;
         }
       }
 
@@ -603,7 +865,8 @@
         .reasons,
         .testimonials,
         .cta-strip,
-        .footer-inner {
+        .footer-inner,
+        .pricing-grid {
           grid-template-columns: 1fr;
           flex-direction: column;
           align-items: stretch;
@@ -628,7 +891,7 @@
         }
 
         .pet-stage {
-          min-height: 430px;
+          min-height: 470px;
           order: -1;
         }
 
@@ -640,6 +903,15 @@
         .pet-card {
           width: 100%;
           padding: 20px;
+        }
+
+        .hero-image-wrap {
+          min-height: 430px;
+        }
+
+        .hero-image {
+          height: 430px;
+          object-position: 56% 12%;
         }
 
         .proof-item strong {
@@ -660,22 +932,23 @@
   <body>
     <header class="topbar">
       <div class="shell topbar-inner">
-        <a href="#home" class="brand" aria-label="PetCare Vet Home">
+        <a href="#home" class="brand" aria-label="Pet Growth Studio Home">
           <span class="brand-mark" aria-hidden="true"></span>
-          <span>PetCare Vet</span>
+          <span>Pet Growth Studio</span>
         </a>
         <nav class="nav">
           <a href="#layanan">Layanan</a>
+          <a href="#paket">Paket</a>
           <a href="#keunggulan">Keunggulan</a>
           <a href="#testimoni">Testimoni</a>
           <a href="#kontak">Kontak</a>
         </nav>
         <a
           class="btn btn-primary"
-          href="https://wa.me/6281384072641?text=Halo%20PetCare%20Vet%2C%20saya%20ingin%20booking%20pemeriksaan%20untuk%20hewan%20peliharaan%20saya."
+          href="https://wa.me/6281384072641?text=Halo%2C%20saya%20tertarik%20dengan%20jasa%20pembuatan%20website%20untuk%20petshop%20atau%20klinik%20hewan%20saya."
           target="_blank"
           rel="noopener noreferrer"
-          >Booking via WhatsApp</a
+          >Konsultasi via WhatsApp</a
         >
       </div>
     </header>
@@ -683,64 +956,85 @@
     <main>
       <section class="hero" id="home">
         <div class="shell hero-grid">
-          <div class="pet-stage">
+          <div class="pet-stage reveal reveal-left">
             <div class="blob" aria-hidden="true"></div>
             <div class="pet-card">
-              <div class="pet-badge">Respon cepat setiap hari</div>
-              <div class="pet-emoji" aria-hidden="true">🐱</div>
+              <div class="pet-badge">Hero image focus: person + dog</div>
+              <div class="hero-image-wrap">
+                <img
+                  class="hero-image"
+                  src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1200&q=80"
+                  alt="Dokter hewan memegang anjing kecil"
+                />
+              </div>
+              <div class="badge-stack">
+                <div class="mini-badge">
+                  <i class="fa-solid fa-globe"></i>
+                  Website yang siap closing
+                </div>
+                <div class="mini-badge">
+                  <i class="fa-brands fa-whatsapp"></i>
+                  CTA langsung ke WhatsApp
+                </div>
+              </div>
             </div>
-            <div class="paw one" aria-hidden="true">🐾</div>
-            <div class="paw two" aria-hidden="true">🐾</div>
+            <div class="paw one" aria-hidden="true">
+              <i class="fa-solid fa-paw"></i>
+            </div>
+            <div class="paw two" aria-hidden="true">
+              <i class="fa-solid fa-paw"></i>
+            </div>
           </div>
 
-          <div class="hero-copy">
-            <div class="eyebrow">Petshop & Klinik Hewan Modern</div>
+          <div class="hero-copy reveal reveal-right" style="--delay: 0.08s">
+            <div class="eyebrow">Jasa Website & Digital Growth Partner</div>
             <h1>
-              Bikin Anabul Lebih Sehat,
-              <span>Owner Lebih Tenang</span>
+              Bantu Petshop & Klinik Hewan
+              <span>Dapat Lebih Banyak Pasien dan Customer</span>
             </h1>
             <p>
-              Dari grooming, vaksin, konsultasi, hingga kebutuhan harian
-              petshop, semua bisa ditangani lebih praktis dalam satu tempat yang
-              ramah, cepat, dan terpercaya. Saat hewan kesayangan butuh
-              perhatian, Anda tidak perlu menunggu lama untuk mendapat bantuan.
+              Kami membantu bisnis petshop dan klinik hewan tampil lebih
+              profesional, lebih mudah ditemukan di Google, dan lebih cepat
+              mengubah visitor menjadi chat WhatsApp yang siap booking. Bukan
+              sekadar bikin website, kami bantu arahkan website Anda menjadi
+              aset pertumbuhan bisnis.
             </p>
             <div class="hero-actions">
               <a
                 class="btn btn-primary"
-                href="https://wa.me/6281384072641?text=Halo%20PetCare%20Vet%2C%20saya%20ingin%20konsultasi%20tentang%20kondisi%20hewan%20peliharaan%20saya."
+                href="https://wa.me/6281384072641?text=Halo%2C%20saya%20ingin%20konsultasi%20untuk%20pembuatan%20website%20petshop%20atau%20klinik%20hewan."
                 target="_blank"
                 rel="noopener noreferrer"
-                >Konsultasi Sekarang</a
+                ><i class="fa-brands fa-whatsapp"></i>Konsultasi Sekarang</a
               >
               <a
                 class="btn btn-secondary"
-                href="https://wa.me/6281384072641?text=Halo%20PetCare%20Vet%2C%20saya%20ingin%20tanya%20layanan%20grooming%2C%20vaksin%2C%20dan%20produk%20petshop."
+                href="https://wa.me/6281384072641?text=Halo%2C%20saya%20ingin%20lihat%20paket%20website%20dan%20penawaran%20untuk%20bisnis%20petshop%20atau%20klinik%20hewan."
                 target="_blank"
                 rel="noopener noreferrer"
-                >Lihat Layanan</a
+                ><i class="fa-solid fa-layer-group"></i>Lihat Paket</a
               >
             </div>
             <div class="hero-proof">
-              <div class="proof-item">
-                <strong>Fast Response</strong>
+              <div class="proof-item reveal" style="--delay: 0.14s">
+                <strong>Website Siap Closing</strong>
                 <span
-                  >Booking dan tanya layanan langsung masuk ke WhatsApp
-                  admin.</span
+                  >Desain, copy, dan CTA dirancang untuk mengarahkan visitor
+                  jadi lead masuk.</span
                 >
               </div>
-              <div class="proof-item">
-                <strong>Care Lengkap</strong>
+              <div class="proof-item reveal" style="--delay: 0.22s">
+                <strong>SEO & Local Visibility</strong>
                 <span
-                  >Klinik, grooming, vitamin, makanan, dan kebutuhan rutin
-                  pet.</span
+                  >Bisnis Anda lebih mudah ditemukan calon customer yang sedang
+                  mencari layanan terdekat.</span
                 >
               </div>
-              <div class="proof-item">
-                <strong>Lebih Nyaman</strong>
+              <div class="proof-item reveal" style="--delay: 0.3s">
+                <strong>WhatsApp Funnel</strong>
                 <span
-                  >Owner tahu harus ke mana saat butuh bantuan cepat untuk
-                  anabul.</span
+                  >Setiap tombol sudah mengarah ke pesan kontekstual agar proses
+                  closing lebih cepat.</span
                 >
               </div>
             </div>
@@ -750,46 +1044,49 @@
 
       <section class="section">
         <div class="shell">
-          <div class="section-title">
-            <h2>Copywriting Berkonsep AIDA untuk Meningkatkan Conversion</h2>
+          <div class="section-title reveal">
+            <h2>
+              Landing Page Berkonsep AIDA untuk Bisnis Petcare yang Mau Tumbuh
+            </h2>
             <p>
-              Setiap blok dirancang untuk menarik perhatian, membangun minat,
-              menyalakan keinginan, dan mengarahkan visitor agar segera klik
-              WhatsApp tanpa ragu.
+              Kami susun halaman ini dengan alur yang sengaja dibuat untuk
+              menarik perhatian owner bisnis, membangun minat, memunculkan
+              keinginan, lalu mendorong aksi chat WhatsApp.
             </p>
           </div>
           <div class="aida-grid">
-            <article class="glass-card">
+            <article class="glass-card reveal" style="--delay: 0.02s">
               <div class="step-label">A</div>
               <h3>Attention</h3>
               <p>
-                Klinik hewan dan petshop yang siap membantu saat anabul butuh
-                perawatan cepat, aman, dan penuh perhatian.
+                Banyak petshop dan klinik hewan punya layanan bagus, tetapi
+                tampilannya belum cukup meyakinkan untuk mengubah visitor jadi
+                customer.
               </p>
             </article>
-            <article class="glass-card">
+            <article class="glass-card reveal" style="--delay: 0.1s">
               <div class="step-label">I</div>
               <h3>Interest</h3>
               <p>
-                Tenaga berpengalaman, layanan lengkap, dan respons yang mudah
-                dijangkau lewat WhatsApp membuat proses jadi lebih nyaman.
+                Dengan website yang rapi, CTA jelas, dan positioning yang tepat,
+                bisnis Anda terlihat lebih profesional dan lebih siap dipercaya.
               </p>
             </article>
-            <article class="glass-card">
+            <article class="glass-card reveal" style="--delay: 0.18s">
               <div class="step-label">D</div>
               <h3>Desire</h3>
               <p>
-                Bayangkan hewan peliharaan Anda ditangani lebih cepat tanpa
-                bingung cari tempat, tanya harga, atau tunggu balasan terlalu
-                lama.
+                Bayangkan calon customer menemukan bisnis Anda di Google, masuk
+                ke landing page, lalu langsung klik WhatsApp untuk booking atau
+                bertanya.
               </p>
             </article>
-            <article class="glass-card">
+            <article class="glass-card reveal" style="--delay: 0.26s">
               <div class="step-label">A</div>
               <h3>Action</h3>
               <p>
-                Klik WhatsApp sekarang untuk tanya jadwal, konsultasi kondisi,
-                atau booking layanan sesuai kebutuhan anabul Anda.
+                Klik WhatsApp sekarang untuk diskusi kebutuhan website, SEO, dan
+                funnel digital yang paling cocok untuk bisnis Anda.
               </p>
             </article>
           </div>
@@ -798,45 +1095,65 @@
 
       <section class="section" id="layanan">
         <div class="shell">
-          <div class="section-title">
-            <h2>Layanan Favorit yang Paling Sering Dicari Owner Hewan</h2>
+          <div class="section-title reveal">
+            <h2>Layanan Kami untuk Membantu Growth Petshop & Klinik Hewan</h2>
             <p>
-              Disusun untuk menjawab kebutuhan paling mendesak sekaligus
-              kebutuhan rutin, sehingga visitor langsung merasa, “ini tempat
-              yang saya cari.”
+              Bukan cuma desain yang cantik. Kami fokus pada kombinasi visual,
+              copywriting, dan struktur halaman yang benar-benar mendorong
+              pertumbuhan inquiry dan booking.
             </p>
           </div>
           <div class="services">
-            <article class="glass-card service-card">
-              <div class="service-icon">🩺</div>
-              <strong>Konsultasi & Pemeriksaan</strong>
+            <article
+              class="glass-card service-card reveal"
+              style="--delay: 0.02s"
+            >
+              <div class="service-icon">
+                <i class="fa-solid fa-laptop-code"></i>
+              </div>
+              <strong>Website Profesional</strong>
               <span>
-                Cek kondisi umum, keluhan mendadak, hingga arahan tindakan awal
-                untuk kucing, anjing, dan hewan kesayangan lainnya.
+                Landing page atau website company profile yang dirancang khusus
+                untuk industri petcare agar terlihat lebih trusted.
               </span>
             </article>
-            <article class="glass-card service-card">
-              <div class="service-icon">💉</div>
-              <strong>Vaksin & Tindakan Preventif</strong>
+            <article
+              class="glass-card service-card reveal"
+              style="--delay: 0.1s"
+            >
+              <div class="service-icon">
+                <i class="fa-solid fa-magnifying-glass-chart"></i>
+              </div>
+              <strong>SEO Lokal</strong>
               <span>
-                Bantu menjaga kesehatan anabul lebih teratur agar risiko sakit
-                bisa ditekan sejak awal.
+                Optimasi struktur dan konten agar bisnis Anda lebih mudah muncul
+                ketika calon customer mencari di area sekitar.
               </span>
             </article>
-            <article class="glass-card service-card">
-              <div class="service-icon">✂️</div>
-              <strong>Grooming Nyaman</strong>
+            <article
+              class="glass-card service-card reveal"
+              style="--delay: 0.18s"
+            >
+              <div class="service-icon">
+                <i class="fa-brands fa-whatsapp"></i>
+              </div>
+              <strong>CTA & Funnel WhatsApp</strong>
               <span>
-                Dari mandi bersih hingga perawatan bulu dan kuku, supaya anabul
-                tetap sehat, wangi, dan tampil prima.
+                Tombol, pesan pembuka, dan alur konversi dibuat lebih strategis
+                agar visitor lebih cepat masuk ke tahap konsultasi.
               </span>
             </article>
-            <article class="glass-card service-card">
-              <div class="service-icon">🛍️</div>
-              <strong>Produk Petshop Pilihan</strong>
+            <article
+              class="glass-card service-card reveal"
+              style="--delay: 0.26s"
+            >
+              <div class="service-icon">
+                <i class="fa-solid fa-pen-nib"></i>
+              </div>
+              <strong>Copywriting Conversion</strong>
               <span>
-                Makanan, vitamin, litter, dan kebutuhan harian yang membantu
-                owner belanja lebih cepat di satu tempat.
+                Konten yang kami tulis diarahkan untuk membangun trust, menjawab
+                keraguan, dan mendorong action yang jelas.
               </span>
             </article>
           </div>
@@ -845,100 +1162,227 @@
 
       <section class="section">
         <div class="shell split-banner">
-          <div class="conversion-box">
-            <h2>Jangan tunggu sampai kondisi anabul memburuk.</h2>
+          <div class="conversion-box reveal reveal-left">
+            <h2>
+              Jangan biarkan calon customer pindah ke kompetitor hanya karena
+              website Anda belum meyakinkan.
+            </h2>
             <p>
-              Semakin cepat Anda berkonsultasi, semakin besar peluang penanganan
-              yang tepat dan lebih tenang untuk owner. Satu chat sekarang bisa
-              membantu Anda mengambil keputusan lebih cepat.
+              Di era digital, kesan pertama sering terjadi dari Google dan
+              website. Kalau tampilan bisnis Anda belum kuat, lambat, atau tidak
+              punya CTA yang jelas, peluang chat dan booking bisa hilang setiap
+              hari.
             </p>
             <div class="highlight-list">
               <div class="highlight-item">
-                Konsultasi awal langsung ke WhatsApp, tanpa formulir yang ribet.
+                Konsultasi awal langsung ke WhatsApp, tanpa formulir panjang
+                yang bikin calon client kabur.
               </div>
               <div class="highlight-item">
-                Cocok untuk tanya gejala, jadwal grooming, stok produk, atau
-                booking pemeriksaan.
+                Cocok untuk owner petshop, dokter hewan, atau pengelola klinik
+                yang ingin tampil lebih profesional.
               </div>
               <div class="highlight-item">
-                Strong conversion message: klik sekarang sebelum kebutuhan
-                anabul makin mendesak.
+                Strong conversion message: makin cepat website Anda dibenahi,
+                makin cepat peluang lead bisa mulai masuk.
               </div>
             </div>
           </div>
-          <div class="glass-card">
+          <div class="glass-card reveal reveal-right" style="--delay: 0.08s">
             <h3 style="margin-top: 0; font-size: 28px">
               CTA yang Siap Dipakai
             </h3>
             <p>
-              Beberapa tombol dibuat dengan pesan berbeda agar visitor langsung
-              masuk ke percakapan yang relevan dan peluang closing lebih tinggi.
+              Kami siapkan beberapa pintu masuk percakapan agar calon client
+              langsung masuk ke topik yang relevan sesuai kebutuhan bisnisnya.
             </p>
             <div class="hero-actions" style="margin-top: 24px">
               <a
                 class="btn btn-primary"
-                href="https://wa.me/6281384072641?text=Halo%20PetCare%20Vet%2C%20saya%20ingin%20booking%20grooming%20untuk%20hewan%20peliharaan%20saya."
+                href="https://wa.me/6281384072641?text=Halo%2C%20saya%20ingin%20membuat%20landing%20page%20untuk%20petshop%20atau%20klinik%20hewan%20saya."
                 target="_blank"
                 rel="noopener noreferrer"
-                >Booking Grooming</a
+                >Buat Landing Page</a
               >
               <a
                 class="btn btn-secondary"
-                href="https://wa.me/6281384072641?text=Halo%20PetCare%20Vet%2C%20apakah%20hari%20ini%20ada%20jadwal%20vaksin%20atau%20pemeriksaan%20dokter%3F"
+                href="https://wa.me/6281384072641?text=Halo%2C%20saya%20ingin%20tanya%20paket%20SEO%20dan%20website%20untuk%20klinik%20hewan%20saya."
                 target="_blank"
                 rel="noopener noreferrer"
-                >Tanya Jadwal Dokter</a
+                >Tanya Paket Growth</a
               >
               <a
                 class="btn btn-secondary"
-                href="https://wa.me/6281384072641?text=Halo%20PetCare%20Vet%2C%20saya%20ingin%20cek%20stok%20makanan%20atau%20produk%20untuk%20anabul%20saya."
+                href="https://wa.me/6281384072641?text=Halo%2C%20saya%20ingin%20diskusi%20audit%20website%20atau%20strategi%20digital%20untuk%20bisnis%20petcare%20saya."
                 target="_blank"
                 rel="noopener noreferrer"
-                >Cek Produk Petshop</a
+                >Audit & Strategi</a
               >
             </div>
           </div>
         </div>
       </section>
 
+      <section class="section" id="paket">
+        <div class="shell">
+          <div class="section-title reveal">
+            <h2>Paket Penawaran untuk Tahap Growth yang Berbeda</h2>
+            <p>
+              Kami pertahankan struktur penawaran awal agar mudah dibandingkan,
+              tetapi sekarang dikemas lebih strategis untuk jasa website dan
+              digital growth.
+            </p>
+          </div>
+          <div class="pricing-grid">
+            <article
+              class="glass-card pricing-card reveal"
+              style="--delay: 0.02s"
+            >
+              <h3>Starter</h3>
+              <span class="pricing-price">Mulai 2 Jutaan</span>
+              <p>
+                Untuk bisnis yang butuh landing page cepat dengan CTA WhatsApp
+                yang siap dipakai.
+              </p>
+              <div class="price-list">
+                <div>
+                  <i class="fa-solid fa-check"></i
+                  ><span>Landing Page profesional</span>
+                </div>
+                <div>
+                  <i class="fa-solid fa-check"></i
+                  ><span>Integrasi WA booking / konsultasi</span>
+                </div>
+                <div>
+                  <i class="fa-solid fa-check"></i
+                  ><span>Desain mobile-friendly</span>
+                </div>
+              </div>
+              <a
+                class="btn btn-secondary"
+                href="https://wa.me/6281384072641?text=Halo%2C%20saya%20tertarik%20dengan%20paket%20Starter%20untuk%20landing%20page%20petshop%20atau%20klinik%20hewan."
+                target="_blank"
+                rel="noopener noreferrer"
+                >Ambil Paket Starter</a
+              >
+            </article>
+            <article
+              class="glass-card pricing-card popular reveal"
+              style="--delay: 0.12s"
+            >
+              <div class="pricing-badge">Paling Diminati</div>
+              <h3>Growth</h3>
+              <span class="pricing-price">4 - 6 Jutaan</span>
+              <p>
+                Untuk bisnis yang ingin tampil lebih kuat di Google dan lebih
+                serius membangun trust.
+              </p>
+              <div class="price-list">
+                <div>
+                  <i class="fa-solid fa-check"></i
+                  ><span>Website + struktur SEO lokal</span>
+                </div>
+                <div>
+                  <i class="fa-solid fa-check"></i
+                  ><span>Copywriting conversion</span>
+                </div>
+                <div>
+                  <i class="fa-solid fa-check"></i
+                  ><span>CTA strategis dan funnel WhatsApp</span>
+                </div>
+              </div>
+              <a
+                class="btn btn-primary"
+                href="https://wa.me/6281384072641?text=Halo%2C%20saya%20ingin%20tahu%20detail%20paket%20Growth%20untuk%20website%20petshop%20atau%20klinik%20hewan."
+                target="_blank"
+                rel="noopener noreferrer"
+                >Diskusi Paket Growth</a
+              >
+            </article>
+            <article
+              class="glass-card pricing-card reveal"
+              style="--delay: 0.22s"
+            >
+              <h3>Premium</h3>
+              <span class="pricing-price">8 - 12 Jutaan</span>
+              <p>
+                Untuk brand yang ingin scale lebih serius dengan sistem, SEO,
+                dan otomasi yang lebih kuat.
+              </p>
+              <div class="price-list">
+                <div>
+                  <i class="fa-solid fa-check"></i
+                  ><span>AI, SEO, dan booking system</span>
+                </div>
+                <div>
+                  <i class="fa-solid fa-check"></i
+                  ><span>Strategi growth dan optimasi conversion</span>
+                </div>
+                <div>
+                  <i class="fa-solid fa-check"></i
+                  ><span>Setup lebih komprehensif untuk scale</span>
+                </div>
+              </div>
+              <a
+                class="btn btn-secondary"
+                href="https://wa.me/6281384072641?text=Halo%2C%20saya%20tertarik%20dengan%20paket%20Premium%20untuk%20website%20dan%20digital%20growth%20bisnis%20petcare."
+                target="_blank"
+                rel="noopener noreferrer"
+                >Tanya Paket Premium</a
+              >
+            </article>
+          </div>
+        </div>
+      </section>
+
       <section class="section" id="keunggulan">
         <div class="shell">
-          <div class="section-title">
-            <h2>
-              Kenapa Landing Page Ini Lebih Meyakinkan untuk Calon Customer
-            </h2>
+          <div class="section-title reveal">
+            <h2>Kenapa Kami Cocok Menjadi Digital Growth Partner Anda</h2>
             <p>
-              Selain tampil lebih modern, struktur kontennya dirancang untuk
-              mengurangi keraguan dan mendorong aksi lebih cepat.
+              Kami tidak berhenti di tampilan. Fokus kami adalah membantu bisnis
+              Anda tumbuh lewat website yang bekerja sebagai alat penjualan.
             </p>
           </div>
           <div class="reasons">
-            <article class="glass-card reason-card">
+            <article
+              class="glass-card reason-card reveal"
+              style="--delay: 0.02s"
+            >
               <strong>100+</strong>
               <span>
-                Kesan visual yang lebih premium membuat bisnis terlihat lebih
-                profesional dan lebih terpercaya.
+                Fokus pada tampilan profesional yang relevan dengan niche
+                petcare.
               </span>
             </article>
-            <article class="glass-card reason-card">
+            <article
+              class="glass-card reason-card reveal"
+              style="--delay: 0.1s"
+            >
               <strong>4x</strong>
               <span>
-                CTA tersebar di titik penting halaman, jadi visitor tidak perlu
-                scroll ulang saat siap bertanya.
+                CTA strategis di berbagai titik penting untuk menaikkan peluang
+                chat.
               </span>
             </article>
-            <article class="glass-card reason-card">
+            <article
+              class="glass-card reason-card reveal"
+              style="--delay: 0.18s"
+            >
               <strong>24/7</strong>
               <span>
-                WhatsApp link fungsional memberi jalur kontak tercepat yang
-                sudah familiar bagi mayoritas pengguna.
+                Website terus bekerja bahkan saat admin tidak sedang aktif
+                promosi.
               </span>
             </article>
-            <article class="glass-card reason-card">
+            <article
+              class="glass-card reason-card reveal"
+              style="--delay: 0.26s"
+            >
               <strong>AIDA</strong>
               <span>
-                Copy dibuat agar visitor bukan cuma tertarik, tapi juga
-                terdorong mengambil tindakan sekarang.
+                Copy dibuat untuk menarik perhatian, membangun trust, dan
+                mendorong action.
               </span>
             </article>
           </div>
@@ -947,38 +1391,95 @@
 
       <section class="section" id="testimoni">
         <div class="shell">
-          <div class="section-title">
-            <h2>Testimoni yang Menguatkan Trust</h2>
+          <div class="section-title reveal">
+            <h2>Testimoni yang Menguatkan Keputusan</h2>
             <p>
-              Social proof membantu visitor merasa lebih aman sebelum
-              menghubungi Anda, terutama untuk layanan kesehatan hewan.
+              Social proof seperti ini membantu calon client merasa lebih yakin
+              bahwa website yang bagus memang bisa berdampak ke bisnis.
             </p>
           </div>
           <div class="testimonials">
-            <article class="glass-card testimonial-card">
+            <article
+              class="glass-card testimonial-card reveal"
+              style="--delay: 0.02s"
+            >
+              <div class="testimonial-head">
+                <div class="reviewer">
+                  <div class="reviewer-badge">R</div>
+                  <div class="reviewer-meta">
+                    <strong>Rina</strong>
+                    <span>Owner petshop lokal</span>
+                  </div>
+                </div>
+                <div class="google-badge">
+                  <span class="google-g">G</span>
+                  <span>Google Review</span>
+                </div>
+              </div>
               <div class="stars">★★★★★</div>
               <p>
-                Admin cepat balas, saya langsung dapat arahan awal untuk kucing
-                saya yang mendadak lemas. Sangat membantu saat panik.
+                Setelah landing page kami jadi, inquiry lewat WhatsApp terasa
+                lebih rapi dan customer jadi lebih percaya sejak awal.
               </p>
-              <strong>Rina, owner kucing Persia</strong>
+              <div class="testimonial-foot">
+                <strong>Verified client feedback</strong>
+                <span>2 minggu lalu</span>
+              </div>
             </article>
-            <article class="glass-card testimonial-card">
+            <article
+              class="glass-card testimonial-card reveal"
+              style="--delay: 0.12s"
+            >
+              <div class="testimonial-head">
+                <div class="reviewer">
+                  <div class="reviewer-badge">D</div>
+                  <div class="reviewer-meta">
+                    <strong>Dimas</strong>
+                    <span>Pengelola klinik hewan</span>
+                  </div>
+                </div>
+                <div class="google-badge">
+                  <span class="google-g">G</span>
+                  <span>Google Review</span>
+                </div>
+              </div>
               <div class="stars">★★★★★</div>
               <p>
-                Booking grooming jadi praktis. Tinggal chat, pilih jadwal, lalu
-                datang. Tempatnya terasa rapi dan profesional.
+                Timnya paham cara mengubah website jadi alat jualan. Bukan cuma
+                bagus dilihat, tapi juga enak dipakai customer untuk booking.
               </p>
-              <strong>Dimas, owner anjing Maltese</strong>
+              <div class="testimonial-foot">
+                <strong>Verified client feedback</strong>
+                <span>1 bulan lalu</span>
+              </div>
             </article>
-            <article class="glass-card testimonial-card">
+            <article
+              class="glass-card testimonial-card reveal"
+              style="--delay: 0.22s"
+            >
+              <div class="testimonial-head">
+                <div class="reviewer">
+                  <div class="reviewer-badge">N</div>
+                  <div class="reviewer-meta">
+                    <strong>Nadia</strong>
+                    <span>Founder brand petcare</span>
+                  </div>
+                </div>
+                <div class="google-badge">
+                  <span class="google-g">G</span>
+                  <span>Google Review</span>
+                </div>
+              </div>
               <div class="stars">★★★★★</div>
               <p>
-                Saya suka karena bisa sekalian tanya produk petshop dan
-                konsultasi. Lebih hemat waktu daripada cari tempat yang
-                terpisah.
+                Saya suka karena copy dan CTA-nya dipikirkan matang. Visitor
+                jadi lebih sering masuk ke WhatsApp dengan pertanyaan yang
+                jelas.
               </p>
-              <strong>Nadia, owner rescue cat</strong>
+              <div class="testimonial-foot">
+                <strong>Verified client feedback</strong>
+                <span>3 minggu lalu</span>
+              </div>
             </article>
           </div>
         </div>
@@ -986,17 +1487,17 @@
 
       <section class="section" id="kontak">
         <div class="shell">
-          <div class="cta-strip">
+          <div class="cta-strip reveal">
             <div>
-              <h3>Siap bantu anabul Anda hari ini.</h3>
+              <h3>Siap bikin website bisnis petcare Anda lebih meyakinkan?</h3>
               <p>
-                Klik tombol di samping untuk mulai chat dengan placeholder pesan
-                yang sudah sesuai konteks layanan.
+                Klik tombol di samping untuk mulai diskusi kebutuhan website,
+                SEO, atau strategi growth digital Anda.
               </p>
             </div>
             <a
               class="btn btn-primary"
-              href="https://wa.me/6281384072641?text=Halo%20PetCare%20Vet%2C%20saya%20ingin%20konsultasi%20dan%20booking%20layanan%20untuk%20hewan%20peliharaan%20saya."
+              href="https://wa.me/6281384072641?text=Halo%2C%20saya%20ingin%20konsultasi%20website%20dan%20digital%20growth%20untuk%20bisnis%20petshop%20atau%20klinik%20hewan%20saya."
               target="_blank"
               rel="noopener noreferrer"
               >Chat WhatsApp Sekarang</a
@@ -1008,9 +1509,31 @@
 
     <footer class="footer">
       <div class="shell footer-inner">
-        <div>© 2026 PetCare Vet. Landing page petshop & klinik hewan.</div>
+        <div>
+          © 2026 Pet Growth Studio. Jasa website petshop & klinik hewan.
+        </div>
         <div>WhatsApp: 0813-8407-2641</div>
       </div>
     </footer>
+    <script>
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('in-view');
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          threshold: 0.16,
+          rootMargin: '0px 0px -8% 0px',
+        },
+      );
+
+      document.querySelectorAll('.reveal').forEach((element) => {
+        observer.observe(element);
+      });
+    </script>
   </body>
 </html>
