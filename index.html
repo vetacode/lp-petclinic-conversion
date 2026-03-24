@@ -172,11 +172,11 @@
       .hero {
         position: relative;
         overflow: hidden;
-        min-height: 100svh;
-        min-height: 100vh;
+        /* min-height: 100svh; */
+        /* min-height: 100vh; */
         display: flex;
         align-items: center;
-        padding: 108px 0 36px;
+        padding: 0 0 100px;
       }
 
       .hero-grid {
@@ -351,7 +351,7 @@
         align-items: center;
         justify-content: center;
         gap: 10px;
-        min-height: 56px;
+        min-height: 46px;
         padding: 0 24px;
         border-radius: 16px;
         font-weight: 700;
@@ -382,8 +382,19 @@
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 14px;
-        margin-top: 28px;
-        width: min(100%, 720px);
+        width: 100%;
+      }
+
+      .hero-proof-section {
+        position: relative;
+        margin-top: -30px;
+        padding: 0 0 28px;
+        z-index: 2;
+      }
+
+      .hero-proof-shell {
+        width: min(1180px, calc(100% - 32px));
+        margin: 0 auto;
       }
 
       .proof-item {
@@ -919,10 +930,6 @@
           min-height: auto;
         }
 
-        .hero-proof {
-          width: 100%;
-        }
-
         .pet-stage {
           min-height: min(62vh, 560px);
         }
@@ -1018,6 +1025,11 @@
         .hero-grid {
           grid-template-columns: 1fr;
           min-height: auto;
+        }
+
+        .hero-proof-section {
+          margin-top: 0;
+          padding-top: 0;
         }
 
         .hero-copy {
@@ -1116,7 +1128,7 @@
           href="https://wa.me/6281384072641?text=Halo%2C%20saya%20tertarik%20dengan%20jasa%20pembuatan%20website%20untuk%20petshop%20atau%20klinik%20hewan%20saya."
           target="_blank"
           rel="noopener noreferrer"
-          >Konsultasi Website FREE</a
+          >Gratis Konsultasi</a
         >
       </div>
     </header>
@@ -1179,28 +1191,33 @@
                 ><i class="fa-solid fa-layer-group"></i>Lihat Paket</a
               >
             </div>
-            <div class="hero-proof">
-              <div class="proof-item reveal" style="--delay: 0.14s">
-                <strong>Website Siap Closing</strong>
-                <span
-                  >Desain, copy, dan CTA dirancang untuk mengarahkan visitor
-                  jadi lead masuk.</span
-                >
-              </div>
-              <div class="proof-item reveal" style="--delay: 0.22s">
-                <strong>SEO & Local Visibility</strong>
-                <span
-                  >Bisnis Anda lebih mudah ditemukan calon customer yang sedang
-                  mencari layanan terdekat.</span
-                >
-              </div>
-              <div class="proof-item reveal" style="--delay: 0.3s">
-                <strong>WhatsApp Funnel</strong>
-                <span
-                  >Setiap tombol sudah mengarah ke pesan kontekstual agar proses
-                  closing lebih cepat.</span
-                >
-              </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="hero-proof-section">
+        <div class="hero-proof-shell">
+          <div class="hero-proof">
+            <div class="proof-item reveal" style="--delay: 0.14s">
+              <strong>Website Siap Closing</strong>
+              <span>
+                Desain, copy, dan CTA dirancang untuk mengarahkan visitor jadi
+                lead masuk.
+              </span>
+            </div>
+            <div class="proof-item reveal" style="--delay: 0.22s">
+              <strong>SEO & Local Visibility</strong>
+              <span>
+                Bisnis Anda lebih mudah ditemukan calon customer yang sedang
+                mencari layanan terdekat.
+              </span>
+            </div>
+            <div class="proof-item reveal" style="--delay: 0.3s">
+              <strong>WhatsApp Funnel</strong>
+              <span>
+                Setiap tombol sudah mengarah ke pesan kontekstual agar proses
+                closing lebih cepat.
+              </span>
             </div>
           </div>
         </div>
@@ -1564,7 +1581,7 @@
       <section class="section" id="testimoni">
         <div class="shell">
           <div class="section-title reveal">
-            <h2>Testimoni yang Menguatkan Keputusan</h2>
+            <h2>Testimoni Pelanggan yang Puas</h2>
             <p>
               Social proof seperti ini membantu calon client merasa lebih yakin
               bahwa website yang bagus memang bisa berdampak ke bisnis.
