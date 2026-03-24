@@ -173,11 +173,9 @@
       .hero {
         position: relative;
         overflow: hidden;
-        /* min-height: 100svh; */
-        /* min-height: 100vh; */
         display: flex;
         align-items: center;
-        padding: 0 0 100px;
+        padding: 26px 0 80px;
       }
 
       .hero-grid {
@@ -891,15 +889,15 @@
         gap: 18px;
         border-top: 1px solid rgba(15, 140, 171, 0.1);
         padding-top: 28px;
-        align-items: center;
+        /* align-items: center; */
       }
 
-      .footer-nav {
+      /* .footer-nav {
         display: flex;
-        justify-content: center;
+        flex-direction: column;
         flex-wrap: wrap;
-        gap: 18px;
         align-items: center;
+        gap: 5px;
       }
 
       .footer-nav a {
@@ -909,7 +907,7 @@
 
       .footer-nav a:hover {
         color: var(--primary);
-      }
+      } */
 
       .footer-credit {
         text-align: right;
@@ -971,8 +969,8 @@
         .pricing-grid {
           grid-template-columns: 1fr;
           flex-direction: column;
-          align-items: stretch;
-          text-align: center;
+          /* align-items: stretch; */
+          /* text-align: center; */
         }
 
         .topbar-inner {
@@ -1133,10 +1131,15 @@
           padding-bottom: 330px;
         }
 
-        .footer-inner,
         .footer-credit {
           text-align: center;
         }
+      }
+      .diamant {
+        text-decoration: underline;
+      }
+      .diamant:hover {
+        color: #0f8cab;
       }
     </style>
   </head>
@@ -1735,18 +1738,28 @@
 
     <footer class="footer">
       <div class="shell footer-inner">
-        <div>
-          © 2026 Pet Growth Studio. Jasa website petshop & klinik hewan.
-        </div>
-        <nav class="footer-nav" aria-label="Footer Menu">
+        <!-- <nav class="footer-nav" aria-label="Footer Menu">
           <a href="#home">Home</a>
           <a href="#layanan">Layanan</a>
           <a href="#paket">Paket</a>
           <a href="#keunggulan">Keunggulan</a>
           <a href="#testimoni">Testimoni</a>
-        </nav>
+        </nav> -->
+        <div style="text-align: center">
+          © 2026 Pet Growth Studio. Jasa website petshop & klinik hewan.
+        </div>
+
         <div class="footer-credit">
-          WebDev by Diamant Digital. All Rights Reserved
+          WebDev by
+          <a
+            class="diamant"
+            href="https://carisolusi.biz.id/diamant-digital-web#home"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Diamant Digital
+          </a>
+          All Rights Reserved
         </div>
       </div>
     </footer>
