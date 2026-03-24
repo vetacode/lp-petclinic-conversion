@@ -299,10 +299,10 @@
 
       .badge-stack {
         position: absolute;
-        left: 18px;
+        left: 28px;
         bottom: 28px;
         display: grid;
-        gap: 12px;
+        gap: 10px;
       }
 
       .mini-badge {
@@ -311,7 +311,7 @@
         gap: 10px;
         width: fit-content;
         padding: 11px 14px;
-        margin: 0 10px;
+        margin: 0;
         border-radius: 999px;
         background: rgba(255, 255, 255, 0.92);
         color: var(--primary-dark);
@@ -1116,12 +1116,18 @@
         .badge-stack {
           left: 14px;
           right: 14px;
-          bottom: 14px;
+          bottom: 34px;
+          justify-items: center;
+          gap: 10px;
         }
 
         .mini-badge {
-          width: 100%;
+          width: min(100%, 280px);
           justify-content: center;
+          margin: 0 auto;
+          text-align: center;
+          font-size: 13px;
+          padding: 11px 14px;
         }
 
         .proof-item strong {
