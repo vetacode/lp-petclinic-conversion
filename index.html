@@ -188,6 +188,12 @@
         min-height: calc(100vh - 144px);
       }
 
+      .hero-copy {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
       .pet-stage {
         min-height: min(72vh, 720px);
         position: relative;
@@ -375,16 +381,18 @@
       .hero-proof {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 16px;
-        margin-top: 34px;
+        gap: 14px;
+        margin-top: 28px;
+        width: min(100%, 720px);
       }
 
       .proof-item {
         background: rgba(255, 255, 255, 0.76);
         border: 1px solid rgba(15, 140, 171, 0.1);
         border-radius: 20px;
-        padding: 18px 18px 16px;
+        padding: 18px 16px 16px;
         box-shadow: 0 18px 40px rgba(18, 76, 92, 0.08);
+        min-height: 168px;
       }
 
       .glass-card,
@@ -409,7 +417,7 @@
 
       .proof-item strong {
         display: block;
-        font-size: 28px;
+        font-size: 22px;
         color: var(--primary-dark);
       }
 
@@ -418,7 +426,23 @@
         margin-top: 6px;
         color: var(--muted);
         font-size: 14px;
-        line-height: 1.6;
+        line-height: 1.65;
+      }
+
+      .cta-card {
+        position: relative;
+        overflow: hidden;
+        padding-bottom: 150px;
+      }
+
+      .cta-card-art {
+        position: absolute;
+        left: 50%;
+        bottom: 8px;
+        width: min(460px, 82%);
+        transform: translateX(-50%);
+        pointer-events: none;
+        user-select: none;
       }
 
       .pricing-grid {
@@ -855,6 +879,28 @@
         gap: 18px;
         border-top: 1px solid rgba(15, 140, 171, 0.1);
         padding-top: 28px;
+        align-items: center;
+      }
+
+      .footer-nav {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 18px;
+        align-items: center;
+      }
+
+      .footer-nav a {
+        color: var(--muted);
+        font-weight: 600;
+      }
+
+      .footer-nav a:hover {
+        color: var(--primary);
+      }
+
+      .footer-credit {
+        text-align: right;
       }
 
       @media (max-width: 1080px) {
@@ -871,6 +917,10 @@
         .hero-grid {
           align-items: start;
           min-height: auto;
+        }
+
+        .hero-proof {
+          width: 100%;
         }
 
         .pet-stage {
@@ -970,6 +1020,10 @@
           min-height: auto;
         }
 
+        .hero-copy {
+          align-items: center;
+        }
+
         .pet-stage {
           min-height: 470px;
           order: -1;
@@ -1010,6 +1064,10 @@
           font-size: 24px;
         }
 
+        .proof-item {
+          min-height: auto;
+        }
+
         .conversion-box,
         .glass-card {
           padding: 24px;
@@ -1017,6 +1075,15 @@
 
         .cta-strip {
           padding: 24px;
+        }
+
+        .cta-card {
+          padding-bottom: 330px;
+        }
+
+        .footer-inner,
+        .footer-credit {
+          text-align: center;
         }
       }
     </style>
@@ -1108,11 +1175,7 @@
                 rel="noopener noreferrer"
                 ><i class="fa-brands fa-whatsapp"></i>Konsultasi Sekarang</a
               >
-              <a
-                class="btn btn-secondary"
-                href="https://wa.me/6281384072641?text=Halo%2C%20saya%20ingin%20lihat%20paket%20website%20dan%20penawaran%20untuk%20bisnis%20petshop%20atau%20klinik%20hewan."
-                target="_blank"
-                rel="noopener noreferrer"
+              <a class="btn btn-secondary" href="#paket"
                 ><i class="fa-solid fa-layer-group"></i>Lihat Paket</a
               >
             </div>
@@ -1289,7 +1352,10 @@
               </div>
             </div>
           </div>
-          <div class="glass-card reveal reveal-right" style="--delay: 0.08s">
+          <div
+            class="glass-card cta-card reveal reveal-right"
+            style="--delay: 0.08s"
+          >
             <h3 style="margin-top: 0; font-size: 28px">
               CTA yang Siap Dipakai
             </h3>
@@ -1320,6 +1386,11 @@
                 >Audit & Strategi</a
               >
             </div>
+            <img
+              class="cta-card-art"
+              src="https://carisolusi.biz.id/gambarbebas/20260325-010536_cta-pets-trans.webp"
+              alt="Ilustrasi dekoratif hewan peliharaan"
+            />
           </div>
         </div>
       </section>
@@ -1610,7 +1681,15 @@
         <div>
           © 2026 Pet Growth Studio. Jasa website petshop & klinik hewan.
         </div>
-        <div>WhatsApp: 0813-8407-2641</div>
+        <nav class="footer-nav" aria-label="Footer Menu">
+          <a href="#home">Home</a>
+          <a href="#layanan">Layanan</a>
+          <a href="#paket">Paket</a>
+          <a href="#keunggulan">Keunggulan</a>
+          <a href="#testimoni">Testimoni</a>
+          <a href="#kontak">Kontak</a>
+        </nav>
+        <div class="footer-credit">Supported by Diamant Digital</div>
       </div>
     </footer>
     <script>
