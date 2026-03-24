@@ -3,143 +3,1014 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Website Klinik Hewan - Tambah Pasien Otomatis</title>
+    <title>Petshop & Klinik Hewan | Booking Cepat via WhatsApp</title>
+    <meta
+      name="description"
+      content="Landing page petshop dan klinik hewan dengan CTA WhatsApp fungsional, copywriting AIDA, dan desain modern untuk meningkatkan booking dan penjualan."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <style>
+      :root {
+        --bg: #f8fffd;
+        --surface: rgba(255, 255, 255, 0.82);
+        --surface-strong: #ffffff;
+        --primary: #0f8cab;
+        --primary-dark: #0a6f89;
+        --accent: #9ff1e4;
+        --accent-soft: #e7fffa;
+        --text: #16313a;
+        --muted: #5f7b82;
+        --line: rgba(15, 140, 171, 0.12);
+        --shadow: 0 24px 60px rgba(18, 76, 92, 0.14);
+        --radius-xl: 32px;
+        --radius-lg: 24px;
+        --radius-md: 18px;
+        --radius-sm: 14px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
       body {
-        font-family: 'Poppins', sans-serif;
         margin: 0;
-        background: #f9fafb;
-        color: #1f2937;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        color: var(--text);
+        background:
+          radial-gradient(
+            circle at top left,
+            rgba(159, 241, 228, 0.72),
+            transparent 28%
+          ),
+          radial-gradient(
+            circle at 85% 20%,
+            rgba(15, 140, 171, 0.12),
+            transparent 24%
+          ),
+          linear-gradient(180deg, #fafdff 0%, #effcf8 100%);
       }
-      .container {
-        max-width: 1100px;
-        margin: auto;
-        padding: 20px;
+
+      a {
+        color: inherit;
+        text-decoration: none;
       }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      .shell {
+        width: min(1180px, calc(100% - 32px));
+        margin: 0 auto;
+      }
+
+      .topbar {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        backdrop-filter: blur(18px);
+        background: rgba(248, 255, 253, 0.8);
+        border-bottom: 1px solid rgba(15, 140, 171, 0.08);
+      }
+
+      .topbar-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 18px 0;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 800;
+        letter-spacing: 0.02em;
+      }
+
+      .brand-mark {
+        width: 52px;
+        height: 52px;
+        border-radius: 18px;
+        position: relative;
+        background: linear-gradient(135deg, var(--primary), #24b0ce);
+        box-shadow: 0 18px 30px rgba(15, 140, 171, 0.22);
+      }
+
+      .brand-mark::before,
+      .brand-mark::after {
+        content: '';
+        position: absolute;
+        inset: 14px;
+        border: 5px solid white;
+        border-radius: 16px;
+        transform: skewX(-18deg);
+      }
+
+      .brand-mark::after {
+        inset: 14px 6px 14px 22px;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        gap: 28px;
+        color: var(--muted);
+        font-weight: 600;
+      }
+
+      .nav a:hover {
+        color: var(--primary);
+      }
+
       .hero {
-        height: 100vh;
+        position: relative;
+        overflow: hidden;
+        padding: 38px 0 84px;
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 0.94fr 1.06fr;
+        align-items: center;
+        gap: 32px;
+      }
+
+      .pet-stage {
+        min-height: 660px;
+        position: relative;
         display: flex;
         align-items: center;
         justify-content: center;
+      }
+
+      .blob {
+        position: absolute;
+        width: 88%;
+        aspect-ratio: 1 / 1.15;
+        background: linear-gradient(180deg, var(--primary) 0%, #0a7895 100%);
+        border-radius: 50% 42% 44% 56% / 52% 54% 46% 48%;
+        left: -10%;
+        top: 4%;
+      }
+
+      .blob::after {
+        content: '';
+        position: absolute;
+        width: 62%;
+        height: 42%;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        right: 10%;
+        top: 10%;
+      }
+
+      .pet-card {
+        position: relative;
+        width: min(520px, 100%);
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.22),
+          rgba(255, 255, 255, 0.08)
+        );
+        border: 1px solid rgba(255, 255, 255, 0.32);
+        backdrop-filter: blur(12px);
+        border-radius: 38px;
+        padding: 26px;
+        box-shadow: var(--shadow);
+      }
+
+      .pet-emoji {
+        font-size: clamp(180px, 28vw, 330px);
+        line-height: 1;
         text-align: center;
-        background: linear-gradient(135deg, #0ea5e9, #22c55e);
-        color: #fff;
+        filter: drop-shadow(0 18px 22px rgba(0, 0, 0, 0.18));
       }
-      .hero h1 {
-        font-size: 40px;
-        margin-bottom: 20px;
+
+      .pet-badge {
+        position: absolute;
+        right: 16px;
+        top: 16px;
+        background: rgba(255, 255, 255, 0.92);
+        color: var(--primary-dark);
+        padding: 10px 14px;
+        border-radius: 999px;
+        font-weight: 700;
+        font-size: 14px;
       }
+
+      .paw {
+        position: absolute;
+        color: rgba(159, 241, 228, 0.9);
+        font-size: 100px;
+        line-height: 1;
+        user-select: none;
+      }
+
+      .paw.one {
+        right: -6px;
+        bottom: 56px;
+      }
+
+      .paw.two {
+        right: 40px;
+        top: 72px;
+        font-size: 74px;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 16px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.84);
+        border: 1px solid rgba(15, 140, 171, 0.12);
+        color: var(--primary-dark);
+        font-weight: 700;
+        margin-bottom: 18px;
+      }
+
+      .hero-copy h1 {
+        margin: 0;
+        font-size: clamp(40px, 5.8vw, 74px);
+        line-height: 0.96;
+        letter-spacing: -0.04em;
+      }
+
+      .hero-copy h1 span {
+        color: var(--primary);
+      }
+
+      .hero-copy p {
+        margin: 24px 0 0;
+        font-size: 18px;
+        line-height: 1.8;
+        color: var(--muted);
+        max-width: 670px;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        margin-top: 30px;
+      }
+
       .btn {
-        background: #fff;
-        color: #0ea5e9;
-        padding: 15px 25px;
-        border-radius: 8px;
-        text-decoration: none;
-        font-weight: 600;
-        display: inline-block;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        min-height: 56px;
+        padding: 0 24px;
+        border-radius: 16px;
+        font-weight: 700;
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease,
+          background 0.2s ease;
       }
-      .section {
-        padding: 60px 20px;
+
+      .btn:hover {
+        transform: translateY(-2px);
       }
-      .card {
-        background: #fff;
-        padding: 20px;
-        border-radius: 12px;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-        margin-bottom: 20px;
+
+      .btn-primary {
+        color: white;
+        background: linear-gradient(135deg, var(--primary) 0%, #25abc6 100%);
+        box-shadow: 0 18px 28px rgba(15, 140, 171, 0.25);
       }
-      .grid {
+
+      .btn-secondary {
+        color: var(--primary-dark);
+        background: rgba(255, 255, 255, 0.9);
+        border: 1px solid rgba(15, 140, 171, 0.18);
+      }
+
+      .hero-proof {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+        margin-top: 34px;
+      }
+
+      .proof-item {
+        background: rgba(255, 255, 255, 0.76);
+        border: 1px solid rgba(15, 140, 171, 0.1);
+        border-radius: 20px;
+        padding: 18px 18px 16px;
+        box-shadow: 0 18px 40px rgba(18, 76, 92, 0.08);
+      }
+
+      .proof-item strong {
+        display: block;
+        font-size: 28px;
+        color: var(--primary-dark);
+      }
+
+      .proof-item span {
+        display: block;
+        margin-top: 6px;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.6;
+      }
+
+      .section {
+        padding: 88px 0;
+      }
+
+      .section-title {
+        text-align: center;
+        max-width: 760px;
+        margin: 0 auto 42px;
+      }
+
+      .section-title h2 {
+        margin: 0;
+        font-size: clamp(30px, 4vw, 48px);
+        line-height: 1.08;
+        letter-spacing: -0.03em;
+      }
+
+      .section-title p {
+        margin: 16px 0 0;
+        color: var(--muted);
+        line-height: 1.8;
+        font-size: 17px;
+      }
+
+      .aida-grid,
+      .services,
+      .reasons,
+      .testimonials {
+        display: grid;
         gap: 20px;
       }
-      .cta {
-        background: #22c55e;
-        color: #fff;
-        text-align: center;
-        padding: 50px 20px;
+
+      .aida-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
       }
-      .footer {
-        text-align: center;
-        padding: 20px;
+
+      .glass-card {
+        background: var(--surface);
+        border: 1px solid rgba(255, 255, 255, 0.6);
+        border-radius: var(--radius-lg);
+        padding: 28px;
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(12px);
+      }
+
+      .step-label {
+        display: inline-flex;
+        width: 44px;
+        height: 44px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 14px;
+        background: var(--accent-soft);
+        color: var(--primary-dark);
+        font-weight: 800;
+        margin-bottom: 18px;
+      }
+
+      .glass-card h3 {
+        margin: 0 0 12px;
+        font-size: 22px;
+      }
+
+      .glass-card p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.8;
+      }
+
+      .services {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .service-card {
+        position: relative;
+        overflow: hidden;
+        min-height: 240px;
+      }
+
+      .service-card::before {
+        content: '';
+        position: absolute;
+        width: 140px;
+        height: 140px;
+        border-radius: 50%;
+        background: rgba(159, 241, 228, 0.55);
+        top: -42px;
+        right: -22px;
+      }
+
+      .service-icon {
+        width: 56px;
+        height: 56px;
+        border-radius: 18px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, var(--primary), #25abc6);
+        color: white;
+        font-size: 24px;
+        margin-bottom: 18px;
+      }
+
+      .service-card strong {
+        display: block;
+        font-size: 22px;
+        margin-bottom: 10px;
+      }
+
+      .service-card span {
+        color: var(--muted);
+        line-height: 1.8;
+      }
+
+      .split-banner {
+        display: grid;
+        grid-template-columns: 1.08fr 0.92fr;
+        gap: 24px;
+        align-items: stretch;
+      }
+
+      .conversion-box {
+        padding: 38px;
+        border-radius: 34px;
+        background: linear-gradient(135deg, #0f8cab 0%, #0a6f89 100%);
+        color: white;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .conversion-box::after {
+        content: '';
+        position: absolute;
+        width: 280px;
+        height: 280px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.08);
+        right: -70px;
+        bottom: -90px;
+      }
+
+      .conversion-box h2 {
+        margin: 0;
+        font-size: clamp(30px, 4vw, 48px);
+        line-height: 1.08;
+      }
+
+      .conversion-box p {
+        margin: 18px 0 0;
+        line-height: 1.9;
+        color: rgba(255, 255, 255, 0.88);
+      }
+
+      .highlight-list {
+        display: grid;
+        gap: 14px;
+        margin-top: 24px;
+      }
+
+      .highlight-item {
+        background: rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        border-radius: 18px;
+        padding: 16px 18px;
+        line-height: 1.7;
+      }
+
+      .reasons {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .reason-card strong {
+        display: block;
+        font-size: 38px;
+        color: var(--primary);
+        margin-bottom: 10px;
+      }
+
+      .reason-card span {
+        color: var(--muted);
+        line-height: 1.75;
+      }
+
+      .testimonials {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .stars {
+        color: #ffb400;
+        letter-spacing: 0.2em;
         font-size: 14px;
-        color: #6b7280;
+        margin-bottom: 14px;
+      }
+
+      .testimonial-card p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.85;
+      }
+
+      .testimonial-card strong {
+        display: block;
+        margin-top: 18px;
+        font-size: 15px;
+      }
+
+      .cta-strip {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        padding: 30px 34px;
+        border-radius: 30px;
+        background: linear-gradient(
+          90deg,
+          rgba(159, 241, 228, 0.48),
+          rgba(15, 140, 171, 0.08)
+        );
+        border: 1px solid rgba(15, 140, 171, 0.12);
+      }
+
+      .cta-strip h3 {
+        margin: 0 0 8px;
+        font-size: 28px;
+      }
+
+      .cta-strip p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.7;
+      }
+
+      .footer {
+        padding: 32px 0 44px;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .footer-inner {
+        display: flex;
+        justify-content: space-between;
+        gap: 18px;
+        border-top: 1px solid rgba(15, 140, 171, 0.1);
+        padding-top: 28px;
+      }
+
+      @media (max-width: 1080px) {
+        .hero-grid,
+        .split-banner,
+        .aida-grid,
+        .services,
+        .reasons,
+        .testimonials {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .hero-grid {
+          align-items: start;
+        }
+
+        .pet-stage {
+          min-height: 540px;
+        }
+      }
+
+      @media (max-width: 760px) {
+        .topbar-inner,
+        .nav,
+        .hero-proof,
+        .aida-grid,
+        .services,
+        .split-banner,
+        .reasons,
+        .testimonials,
+        .cta-strip,
+        .footer-inner {
+          grid-template-columns: 1fr;
+          flex-direction: column;
+          align-items: stretch;
+        }
+
+        .topbar-inner {
+          padding: 14px 0;
+        }
+
+        .nav {
+          gap: 14px;
+          font-size: 14px;
+          flex-wrap: wrap;
+        }
+
+        .hero {
+          padding-top: 24px;
+        }
+
+        .hero-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .pet-stage {
+          min-height: 430px;
+          order: -1;
+        }
+
+        .blob {
+          width: 100%;
+          left: 0;
+        }
+
+        .pet-card {
+          width: 100%;
+          padding: 20px;
+        }
+
+        .proof-item strong {
+          font-size: 24px;
+        }
+
+        .conversion-box,
+        .glass-card {
+          padding: 24px;
+        }
+
+        .cta-strip {
+          padding: 24px;
+        }
       }
     </style>
   </head>
   <body>
-    <section class="hero">
-      <div class="container">
-        <h1>
-          Tambah Pasien Klinik Hewan Secara Otomatis Lewat Website & Google
-        </h1>
-        <p>
-          Dapatkan pasien baru setiap minggu tanpa bergantung pada rekomendasi
-          saja.
-        </p>
-        <a href="https://wa.me/6280000000000" class="btn"
-          >Konsultasi Gratis via WhatsApp</a
+    <header class="topbar">
+      <div class="shell topbar-inner">
+        <a href="#home" class="brand" aria-label="PetCare Vet Home">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span>PetCare Vet</span>
+        </a>
+        <nav class="nav">
+          <a href="#layanan">Layanan</a>
+          <a href="#keunggulan">Keunggulan</a>
+          <a href="#testimoni">Testimoni</a>
+          <a href="#kontak">Kontak</a>
+        </nav>
+        <a
+          class="btn btn-primary"
+          href="https://wa.me/6281384072641?text=Halo%20PetCare%20Vet%2C%20saya%20ingin%20booking%20pemeriksaan%20untuk%20hewan%20peliharaan%20saya."
+          target="_blank"
+          rel="noopener noreferrer"
+          >Booking via WhatsApp</a
         >
       </div>
-    </section>
+    </header>
 
-    <section class="section">
-      <div class="container">
-        <h2>Masalah yang Sering Terjadi</h2>
-        <div class="grid">
-          <div class="card">❌ Klinik sulit ditemukan di Google</div>
-          <div class="card">❌ Booking masih manual & berantakan</div>
-          <div class="card">❌ Tidak ada edukasi untuk menarik pasien</div>
-          <div class="card">❌ Kehilangan pasien potensial setiap hari</div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" style="background: #f3f4f6">
-      <div class="container">
-        <h2>Solusi Kami</h2>
-        <div class="grid">
-          <div class="card">✅ Website profesional khusus klinik hewan</div>
-          <div class="card">✅ Optimasi Google (SEO Lokal)</div>
-          <div class="card">✅ Booking WhatsApp otomatis</div>
-          <div class="card">✅ Sistem edukasi & artikel</div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <h2>Paket Layanan</h2>
-        <div class="grid">
-          <div class="card">
-            <h3>Starter</h3>
-            <p>Landing Page + WA Booking</p>
-            <p><strong>Mulai 2 Jutaan</strong></p>
+    <main>
+      <section class="hero" id="home">
+        <div class="shell hero-grid">
+          <div class="pet-stage">
+            <div class="blob" aria-hidden="true"></div>
+            <div class="pet-card">
+              <div class="pet-badge">Respon cepat setiap hari</div>
+              <div class="pet-emoji" aria-hidden="true">🐱</div>
+            </div>
+            <div class="paw one" aria-hidden="true">🐾</div>
+            <div class="paw two" aria-hidden="true">🐾</div>
           </div>
-          <div class="card">
-            <h3>Growth</h3>
-            <p>Website + SEO + Copywriting</p>
-            <p><strong>4 - 6 Jutaan</strong></p>
-          </div>
-          <div class="card">
-            <h3>Premium</h3>
-            <p>AI + SEO + Booking System</p>
-            <p><strong>8 - 12 Jutaan</strong></p>
+
+          <div class="hero-copy">
+            <div class="eyebrow">Petshop & Klinik Hewan Modern</div>
+            <h1>
+              Bikin Anabul Lebih Sehat,
+              <span>Owner Lebih Tenang</span>
+            </h1>
+            <p>
+              Dari grooming, vaksin, konsultasi, hingga kebutuhan harian
+              petshop, semua bisa ditangani lebih praktis dalam satu tempat yang
+              ramah, cepat, dan terpercaya. Saat hewan kesayangan butuh
+              perhatian, Anda tidak perlu menunggu lama untuk mendapat bantuan.
+            </p>
+            <div class="hero-actions">
+              <a
+                class="btn btn-primary"
+                href="https://wa.me/6281384072641?text=Halo%20PetCare%20Vet%2C%20saya%20ingin%20konsultasi%20tentang%20kondisi%20hewan%20peliharaan%20saya."
+                target="_blank"
+                rel="noopener noreferrer"
+                >Konsultasi Sekarang</a
+              >
+              <a
+                class="btn btn-secondary"
+                href="https://wa.me/6281384072641?text=Halo%20PetCare%20Vet%2C%20saya%20ingin%20tanya%20layanan%20grooming%2C%20vaksin%2C%20dan%20produk%20petshop."
+                target="_blank"
+                rel="noopener noreferrer"
+                >Lihat Layanan</a
+              >
+            </div>
+            <div class="hero-proof">
+              <div class="proof-item">
+                <strong>Fast Response</strong>
+                <span
+                  >Booking dan tanya layanan langsung masuk ke WhatsApp
+                  admin.</span
+                >
+              </div>
+              <div class="proof-item">
+                <strong>Care Lengkap</strong>
+                <span
+                  >Klinik, grooming, vitamin, makanan, dan kebutuhan rutin
+                  pet.</span
+                >
+              </div>
+              <div class="proof-item">
+                <strong>Lebih Nyaman</strong>
+                <span
+                  >Owner tahu harus ke mana saat butuh bantuan cepat untuk
+                  anabul.</span
+                >
+              </div>
+            </div>
           </div>
         </div>
+      </section>
+
+      <section class="section">
+        <div class="shell">
+          <div class="section-title">
+            <h2>Copywriting Berkonsep AIDA untuk Meningkatkan Conversion</h2>
+            <p>
+              Setiap blok dirancang untuk menarik perhatian, membangun minat,
+              menyalakan keinginan, dan mengarahkan visitor agar segera klik
+              WhatsApp tanpa ragu.
+            </p>
+          </div>
+          <div class="aida-grid">
+            <article class="glass-card">
+              <div class="step-label">A</div>
+              <h3>Attention</h3>
+              <p>
+                Klinik hewan dan petshop yang siap membantu saat anabul butuh
+                perawatan cepat, aman, dan penuh perhatian.
+              </p>
+            </article>
+            <article class="glass-card">
+              <div class="step-label">I</div>
+              <h3>Interest</h3>
+              <p>
+                Tenaga berpengalaman, layanan lengkap, dan respons yang mudah
+                dijangkau lewat WhatsApp membuat proses jadi lebih nyaman.
+              </p>
+            </article>
+            <article class="glass-card">
+              <div class="step-label">D</div>
+              <h3>Desire</h3>
+              <p>
+                Bayangkan hewan peliharaan Anda ditangani lebih cepat tanpa
+                bingung cari tempat, tanya harga, atau tunggu balasan terlalu
+                lama.
+              </p>
+            </article>
+            <article class="glass-card">
+              <div class="step-label">A</div>
+              <h3>Action</h3>
+              <p>
+                Klik WhatsApp sekarang untuk tanya jadwal, konsultasi kondisi,
+                atau booking layanan sesuai kebutuhan anabul Anda.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="layanan">
+        <div class="shell">
+          <div class="section-title">
+            <h2>Layanan Favorit yang Paling Sering Dicari Owner Hewan</h2>
+            <p>
+              Disusun untuk menjawab kebutuhan paling mendesak sekaligus
+              kebutuhan rutin, sehingga visitor langsung merasa, “ini tempat
+              yang saya cari.”
+            </p>
+          </div>
+          <div class="services">
+            <article class="glass-card service-card">
+              <div class="service-icon">🩺</div>
+              <strong>Konsultasi & Pemeriksaan</strong>
+              <span>
+                Cek kondisi umum, keluhan mendadak, hingga arahan tindakan awal
+                untuk kucing, anjing, dan hewan kesayangan lainnya.
+              </span>
+            </article>
+            <article class="glass-card service-card">
+              <div class="service-icon">💉</div>
+              <strong>Vaksin & Tindakan Preventif</strong>
+              <span>
+                Bantu menjaga kesehatan anabul lebih teratur agar risiko sakit
+                bisa ditekan sejak awal.
+              </span>
+            </article>
+            <article class="glass-card service-card">
+              <div class="service-icon">✂️</div>
+              <strong>Grooming Nyaman</strong>
+              <span>
+                Dari mandi bersih hingga perawatan bulu dan kuku, supaya anabul
+                tetap sehat, wangi, dan tampil prima.
+              </span>
+            </article>
+            <article class="glass-card service-card">
+              <div class="service-icon">🛍️</div>
+              <strong>Produk Petshop Pilihan</strong>
+              <span>
+                Makanan, vitamin, litter, dan kebutuhan harian yang membantu
+                owner belanja lebih cepat di satu tempat.
+              </span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="shell split-banner">
+          <div class="conversion-box">
+            <h2>Jangan tunggu sampai kondisi anabul memburuk.</h2>
+            <p>
+              Semakin cepat Anda berkonsultasi, semakin besar peluang penanganan
+              yang tepat dan lebih tenang untuk owner. Satu chat sekarang bisa
+              membantu Anda mengambil keputusan lebih cepat.
+            </p>
+            <div class="highlight-list">
+              <div class="highlight-item">
+                Konsultasi awal langsung ke WhatsApp, tanpa formulir yang ribet.
+              </div>
+              <div class="highlight-item">
+                Cocok untuk tanya gejala, jadwal grooming, stok produk, atau
+                booking pemeriksaan.
+              </div>
+              <div class="highlight-item">
+                Strong conversion message: klik sekarang sebelum kebutuhan
+                anabul makin mendesak.
+              </div>
+            </div>
+          </div>
+          <div class="glass-card">
+            <h3 style="margin-top: 0; font-size: 28px">
+              CTA yang Siap Dipakai
+            </h3>
+            <p>
+              Beberapa tombol dibuat dengan pesan berbeda agar visitor langsung
+              masuk ke percakapan yang relevan dan peluang closing lebih tinggi.
+            </p>
+            <div class="hero-actions" style="margin-top: 24px">
+              <a
+                class="btn btn-primary"
+                href="https://wa.me/6281384072641?text=Halo%20PetCare%20Vet%2C%20saya%20ingin%20booking%20grooming%20untuk%20hewan%20peliharaan%20saya."
+                target="_blank"
+                rel="noopener noreferrer"
+                >Booking Grooming</a
+              >
+              <a
+                class="btn btn-secondary"
+                href="https://wa.me/6281384072641?text=Halo%20PetCare%20Vet%2C%20apakah%20hari%20ini%20ada%20jadwal%20vaksin%20atau%20pemeriksaan%20dokter%3F"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Tanya Jadwal Dokter</a
+              >
+              <a
+                class="btn btn-secondary"
+                href="https://wa.me/6281384072641?text=Halo%20PetCare%20Vet%2C%20saya%20ingin%20cek%20stok%20makanan%20atau%20produk%20untuk%20anabul%20saya."
+                target="_blank"
+                rel="noopener noreferrer"
+                >Cek Produk Petshop</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="keunggulan">
+        <div class="shell">
+          <div class="section-title">
+            <h2>
+              Kenapa Landing Page Ini Lebih Meyakinkan untuk Calon Customer
+            </h2>
+            <p>
+              Selain tampil lebih modern, struktur kontennya dirancang untuk
+              mengurangi keraguan dan mendorong aksi lebih cepat.
+            </p>
+          </div>
+          <div class="reasons">
+            <article class="glass-card reason-card">
+              <strong>100+</strong>
+              <span>
+                Kesan visual yang lebih premium membuat bisnis terlihat lebih
+                profesional dan lebih terpercaya.
+              </span>
+            </article>
+            <article class="glass-card reason-card">
+              <strong>4x</strong>
+              <span>
+                CTA tersebar di titik penting halaman, jadi visitor tidak perlu
+                scroll ulang saat siap bertanya.
+              </span>
+            </article>
+            <article class="glass-card reason-card">
+              <strong>24/7</strong>
+              <span>
+                WhatsApp link fungsional memberi jalur kontak tercepat yang
+                sudah familiar bagi mayoritas pengguna.
+              </span>
+            </article>
+            <article class="glass-card reason-card">
+              <strong>AIDA</strong>
+              <span>
+                Copy dibuat agar visitor bukan cuma tertarik, tapi juga
+                terdorong mengambil tindakan sekarang.
+              </span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="testimoni">
+        <div class="shell">
+          <div class="section-title">
+            <h2>Testimoni yang Menguatkan Trust</h2>
+            <p>
+              Social proof membantu visitor merasa lebih aman sebelum
+              menghubungi Anda, terutama untuk layanan kesehatan hewan.
+            </p>
+          </div>
+          <div class="testimonials">
+            <article class="glass-card testimonial-card">
+              <div class="stars">★★★★★</div>
+              <p>
+                Admin cepat balas, saya langsung dapat arahan awal untuk kucing
+                saya yang mendadak lemas. Sangat membantu saat panik.
+              </p>
+              <strong>Rina, owner kucing Persia</strong>
+            </article>
+            <article class="glass-card testimonial-card">
+              <div class="stars">★★★★★</div>
+              <p>
+                Booking grooming jadi praktis. Tinggal chat, pilih jadwal, lalu
+                datang. Tempatnya terasa rapi dan profesional.
+              </p>
+              <strong>Dimas, owner anjing Maltese</strong>
+            </article>
+            <article class="glass-card testimonial-card">
+              <div class="stars">★★★★★</div>
+              <p>
+                Saya suka karena bisa sekalian tanya produk petshop dan
+                konsultasi. Lebih hemat waktu daripada cari tempat yang
+                terpisah.
+              </p>
+              <strong>Nadia, owner rescue cat</strong>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="kontak">
+        <div class="shell">
+          <div class="cta-strip">
+            <div>
+              <h3>Siap bantu anabul Anda hari ini.</h3>
+              <p>
+                Klik tombol di samping untuk mulai chat dengan placeholder pesan
+                yang sudah sesuai konteks layanan.
+              </p>
+            </div>
+            <a
+              class="btn btn-primary"
+              href="https://wa.me/6281384072641?text=Halo%20PetCare%20Vet%2C%20saya%20ingin%20konsultasi%20dan%20booking%20layanan%20untuk%20hewan%20peliharaan%20saya."
+              target="_blank"
+              rel="noopener noreferrer"
+              >Chat WhatsApp Sekarang</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="shell footer-inner">
+        <div>© 2026 PetCare Vet. Landing page petshop & klinik hewan.</div>
+        <div>WhatsApp: 0813-8407-2641</div>
       </div>
-    </section>
-
-    <section class="cta">
-      <h2>Mulai Tambah Pasien Sekarang</h2>
-      <p>Konsultasi GRATIS, tanpa komitmen</p>
-      <a href="https://wa.me/6280000000000" class="btn">Chat Sekarang</a>
-    </section>
-
-    <div class="footer">© 2026 Jasa Website Klinik Hewan</div>
+    </footer>
   </body>
 </html>
