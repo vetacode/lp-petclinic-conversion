@@ -478,11 +478,16 @@
       .pricing-card {
         position: relative;
         overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
       }
 
       .pricing-card.popular {
+        background-color: rgba(0, 255, 174, 0.1);
+        opacity: 50%;
         transform: translateY(-8px);
-        border: 1px solid rgba(15, 140, 171, 0.24);
+        border: 2px solid rgba(15, 140, 171, 0.24);
       }
 
       .pricing-card.popular:hover {
@@ -498,6 +503,7 @@
         font-size: 12px;
         font-weight: 800;
         padding: 8px 12px;
+        border: 1px solid rgba(15, 140, 171, 0.24);
         border-radius: 999px;
       }
 
