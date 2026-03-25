@@ -477,7 +477,7 @@
       .pricing-grid {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 20px;
+        gap: 24px;
       }
 
       .pricing-card {
@@ -486,30 +486,98 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        padding: 32px;
+        background:
+          radial-gradient(
+            circle at top right,
+            rgba(159, 241, 228, 0.24),
+            transparent 34%
+          ),
+          linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(243, 255, 251, 0.9));
+        border: 1px solid rgba(15, 140, 171, 0.12);
+        box-shadow:
+          0 24px 60px rgba(18, 76, 92, 0.12),
+          inset 0 1px 0 rgba(255, 255, 255, 0.65);
+        transition:
+          transform 0.28s ease,
+          box-shadow 0.28s ease,
+          border-color 0.28s ease;
+      }
+
+      .pricing-card::before {
+        content: '';
+        position: absolute;
+        inset: 0 0 auto;
+        height: 5px;
+        background: linear-gradient(90deg, rgba(15, 140, 171, 0.16), rgba(15, 140, 171, 0.55));
+      }
+
+      .pricing-card:hover {
+        transform: translateY(-10px);
+        border-color: rgba(15, 140, 171, 0.22);
+        box-shadow:
+          0 30px 68px rgba(18, 76, 92, 0.18),
+          inset 0 1px 0 rgba(255, 255, 255, 0.72);
+      }
+
+      .pricing-head {
+        margin-bottom: 18px;
+      }
+
+      .pricing-kicker {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 14px;
+        padding: 8px 12px;
+        border-radius: 999px;
+        background: rgba(15, 140, 171, 0.08);
+        color: var(--primary-dark);
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      .pricing-kicker i {
+        font-size: 11px;
+      }
+
+      .pricing-card p {
+        margin-bottom: 0;
       }
 
       .pricing-card.popular {
-        background-color: rgba(0, 255, 174, 0.1);
-        opacity: 50%;
-        transform: translateY(-8px);
-        border: 2px solid rgba(15, 140, 171, 0.24);
+        background:
+          radial-gradient(
+            circle at top right,
+            rgba(159, 241, 228, 0.38),
+            transparent 32%
+          ),
+          linear-gradient(180deg, #ffffff 0%, #ecfffb 100%);
+        transform: translateY(-12px) scale(1.015);
+        border: 2px solid rgba(15, 140, 171, 0.28);
+        box-shadow:
+          0 34px 78px rgba(15, 140, 171, 0.18),
+          0 0 0 1px rgba(159, 241, 228, 0.75);
       }
 
       .pricing-card.popular:hover {
-        transform: translateY(-14px);
+        transform: translateY(-18px) scale(1.02);
       }
 
       .pricing-badge {
         position: absolute;
-        top: 18px;
-        right: 18px;
-        background: var(--accent-soft);
-        color: var(--primary-dark);
+        top: 20px;
+        right: 20px;
+        background: linear-gradient(135deg, #0f8cab, #19a7c7);
+        color: white;
         font-size: 12px;
         font-weight: 800;
-        padding: 8px 12px;
-        border: 1px solid rgba(15, 140, 171, 0.24);
+        padding: 9px 13px;
+        border: 1px solid rgba(255, 255, 255, 0.28);
         border-radius: 999px;
+        box-shadow: 0 12px 24px rgba(15, 140, 171, 0.22);
       }
 
       .pricing-card h3 {
@@ -519,16 +587,40 @@
 
       .pricing-price {
         display: block;
-        margin: 12px 0 18px;
+        margin: 10px 0 8px;
         font-size: 34px;
         color: var(--primary);
         font-weight: 800;
+        letter-spacing: -0.03em;
+      }
+
+      .pricing-note {
+        display: inline-block;
+        margin-bottom: 18px;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.6;
+      }
+
+      .pricing-highlight {
+        margin: 0 0 18px;
+        padding: 14px 16px;
+        border-radius: 16px;
+        background: rgba(15, 140, 171, 0.06);
+        color: var(--primary-dark);
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 1.6;
+      }
+
+      .pricing-card.popular .pricing-highlight {
+        background: linear-gradient(135deg, rgba(15, 140, 171, 0.12), rgba(159, 241, 228, 0.3));
       }
 
       .price-list {
         display: grid;
-        gap: 12px;
-        margin: 20px 0 28px;
+        gap: 14px;
+        margin: 20px 0 30px;
         color: var(--muted);
       }
 
@@ -536,7 +628,16 @@
         display: flex;
         align-items: flex-start;
         gap: 10px;
+        padding: 12px 14px;
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.72);
+        border: 1px solid rgba(15, 140, 171, 0.08);
         line-height: 1.7;
+      }
+
+      .price-list i {
+        margin-top: 4px;
+        color: var(--primary);
       }
 
       .section {
@@ -1496,9 +1597,10 @@
           <div class="section-title reveal">
             <h2>Paket Penawaran untuk Tahap Growth yang Berbeda</h2>
             <p>
-              Kami pertahankan struktur penawaran awal agar mudah dibandingkan,
-              tetapi sekarang dikemas lebih strategis untuk jasa website dan
-              digital growth.
+              Setiap paket dibuat sesuai level kebutuhan bisnis petcare Anda.
+              Paket Growth kami posisikan sebagai sweet spot paling worth untuk
+              bisnis yang ingin tampil profesional sekaligus mulai konsisten
+              menghasilkan leads.
             </p>
           </div>
           <div class="pricing-grid">
@@ -1506,24 +1608,46 @@
               class="glass-card pricing-card reveal"
               style="--delay: 0.02s"
             >
-              <h3>Starter</h3>
-              <span class="pricing-price">Mulai 2 Jutaan</span>
+              <div class="pricing-head">
+                <div class="pricing-kicker">
+                  <i class="fa-solid fa-seedling"></i>
+                  <span>Untuk mulai online cepat</span>
+                </div>
+                <h3>Starter</h3>
+                <span class="pricing-price">Rp2.500.000</span>
+                <span class="pricing-note"
+                  >Cocok untuk petshop atau klinik yang butuh landing page
+                  rapi tanpa setup yang kompleks.</span
+                >
+              </div>
               <p>
                 Untuk bisnis yang butuh landing page cepat dengan CTA WhatsApp
                 yang siap dipakai.
               </p>
+              <div class="pricing-highlight">
+                Ideal bila Anda baru ingin punya website yang terlihat kredibel
+                dan memudahkan calon customer menghubungi bisnis.
+              </div>
               <div class="price-list">
                 <div>
                   <i class="fa-solid fa-check"></i
-                  ><span>Landing Page profesional</span>
+                  ><span>1 landing page profesional dengan desain custom</span>
                 </div>
                 <div>
                   <i class="fa-solid fa-check"></i
-                  ><span>Integrasi WA booking / konsultasi</span>
+                  ><span>Integrasi WhatsApp untuk booking atau konsultasi</span>
                 </div>
                 <div>
                   <i class="fa-solid fa-check"></i
-                  ><span>Desain mobile-friendly</span>
+                  ><span>Desain mobile-friendly dan loading ringan</span>
+                </div>
+                <div>
+                  <i class="fa-solid fa-check"></i
+                  ><span>Copy dasar untuk headline, benefit, dan CTA utama</span>
+                </div>
+                <div>
+                  <i class="fa-solid fa-check"></i
+                  ><span>Gratis revisi minor sampai siap tayang</span>
                 </div>
               </div>
               <a
@@ -1539,24 +1663,52 @@
               style="--delay: 0.12s"
             >
               <div class="pricing-badge">Paling Diminati</div>
-              <h3>Growth</h3>
-              <span class="pricing-price">4 - 6 Jutaan</span>
+              <div class="pricing-head">
+                <div class="pricing-kicker">
+                  <i class="fa-solid fa-chart-line"></i>
+                  <span>Best value untuk leads</span>
+                </div>
+                <h3>Growth</h3>
+                <span class="pricing-price">Rp4.900.000</span>
+                <span class="pricing-note"
+                  >Pilihan paling ideal untuk bisnis yang ingin website tidak
+                  hanya bagus, tetapi juga lebih siap ditemukan dan dipercaya
+                  calon customer.</span
+                >
+              </div>
               <p>
                 Untuk bisnis yang ingin tampil lebih kuat di Google dan lebih
                 serius membangun trust.
               </p>
+              <div class="pricing-highlight">
+                Selisih investasinya masih efisien, tetapi benefit-nya jauh
+                lebih terasa untuk bantu branding, pencarian lokal, dan
+                kenaikan inquiry WhatsApp.
+              </div>
               <div class="price-list">
                 <div>
                   <i class="fa-solid fa-check"></i
-                  ><span>Website + struktur SEO lokal</span>
+                  ><span>Website multipage dengan struktur yang lebih lengkap</span>
                 </div>
                 <div>
                   <i class="fa-solid fa-check"></i
-                  ><span>Copywriting conversion</span>
+                  ><span>Setup SEO lokal dasar agar lebih siap muncul di Google</span>
                 </div>
                 <div>
                   <i class="fa-solid fa-check"></i
-                  ><span>CTA strategis dan funnel WhatsApp</span>
+                  ><span>Copywriting conversion untuk headline, offer, dan CTA</span>
+                </div>
+                <div>
+                  <i class="fa-solid fa-check"></i
+                  ><span>CTA strategis dan funnel WhatsApp yang lebih terarah</span>
+                </div>
+                <div>
+                  <i class="fa-solid fa-check"></i
+                  ><span>Section trust builder: testimoni, FAQ, dan keunggulan</span>
+                </div>
+                <div>
+                  <i class="fa-solid fa-check"></i
+                  ><span>Riset kompetitor ringan untuk positioning penawaran</span>
                 </div>
               </div>
               <a
@@ -1571,24 +1723,47 @@
               class="glass-card pricing-card reveal"
               style="--delay: 0.22s"
             >
-              <h3>Premium</h3>
-              <span class="pricing-price">8 - 12 Jutaan</span>
+              <div class="pricing-head">
+                <div class="pricing-kicker">
+                  <i class="fa-solid fa-crown"></i>
+                  <span>Untuk scale lebih serius</span>
+                </div>
+                <h3>Premium</h3>
+                <span class="pricing-price">Rp9.500.000</span>
+                <span class="pricing-note"
+                  >Dirancang untuk brand petcare yang butuh sistem lebih
+                  lengkap, automasi lebih jauh, dan fondasi digital yang lebih
+                  kuat.</span
+                >
+              </div>
               <p>
                 Untuk brand yang ingin scale lebih serius dengan sistem, SEO,
                 dan otomasi yang lebih kuat.
               </p>
+              <div class="pricing-highlight">
+                Pilih paket ini bila tim Anda sudah siap menjalankan proses
+                follow-up, booking, dan optimasi lanjutan secara lebih aktif.
+              </div>
               <div class="price-list">
                 <div>
                   <i class="fa-solid fa-check"></i
-                  ><span>AI, SEO, dan booking system</span>
+                  ><span>Semua benefit paket Growth</span>
                 </div>
                 <div>
                   <i class="fa-solid fa-check"></i
-                  ><span>Strategi growth dan optimasi conversion</span>
+                  ><span>Fitur booking, formulir, atau alur lead yang lebih lengkap</span>
                 </div>
                 <div>
                   <i class="fa-solid fa-check"></i
-                  ><span>Setup lebih komprehensif untuk scale</span>
+                  ><span>Setup optimasi SEO lanjutan untuk halaman prioritas</span>
+                </div>
+                <div>
+                  <i class="fa-solid fa-check"></i
+                  ><span>Integrasi automasi atau AI sesuai kebutuhan workflow</span>
+                </div>
+                <div>
+                  <i class="fa-solid fa-check"></i
+                  ><span>Diskusi strategi growth dan optimasi conversion lebih mendalam</span>
                 </div>
               </div>
               <a
